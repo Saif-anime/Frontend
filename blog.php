@@ -13,7 +13,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" integrity="sha512-X/RSQYxFb/tvuz6aNRTfKXDnQzmnzoawgEQ4X8nZNftzs8KFFH23p/BA6D2k0QCM4R0sY1DEy9MIY9b3fwi+bg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body  class="flex justify-content-center justify-center	items-center	h-screen">
+
+
+
+<!-- spinner here  -->
+<div id="spinner">
+<?php
+include './component/spinner.php';
+
+?>
+</div>
+
+<!-- spinner end here  -->
+
+
+
+<div id="body">
 
 <!-- navigation bar here  -->
 
@@ -33,65 +49,11 @@ include './component/navbar.php';
     <div class="flex flex-wrap -m-4">
         <!-- card here  -->
 
-        <div class="p-4 md:w-1/4">
-        <?php
-    include './component/card.php';?>
-
-
-    </div>
-
     <div class="p-4 md:w-1/4">
         <?php
     include './component/card.php';?>
-
-
     </div>
 
-
-    <div class="p-4 md:w-1/4">
-        <?php
-    include './component/card.php';?>
-
-
-    </div>
-
-
-    <div class="p-4 md:w-1/4">
-        <?php
-    include './component/card.php';?>
-
-
-    </div>
-
-
-    <div class="p-4 md:w-1/4">
-        <?php
-    include './component/card.php';?>
-
-
-    </div>
-
-
-    <div class="p-4 md:w-1/4">
-        <?php
-    include './component/card.php';?>
-
-
-    </div>
-
-    <div class="p-4 md:w-1/4">
-        <?php
-    include './component/card.php';?>
-
-
-    </div>
-
-    <div class="p-4 md:w-1/4">
-        <?php
-    include './component/card.php';?>
-
-
-    </div>
     </div>
 
 
@@ -101,7 +63,7 @@ include './component/navbar.php';
 
   
     </div>
-  </div>
+
 </section>
 
 
@@ -122,10 +84,27 @@ include './component/footer.php';
 
 ?>
 
-
+</div>
 </body>
   <!-- carausel  -->
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
  
+  <script>
+    function fun(){
+  $('#body').removeClass('hidden');
+  $('#spinner').addClass('hidden');
+  $('body').removeClass('flex justify-content-center justify-center	items-center	h-screen');
+}
 
+$(document).ready(function(){
+
+  $('#body').addClass('hidden');
+  $('body').addClass('flex justify-content-center justify-center	items-center	h-screen');
+  $('#spinner').removeClass('hidden');
+
+
+  setInterval(fun, 1000)
+  
+})
+  </script>
 </html>
